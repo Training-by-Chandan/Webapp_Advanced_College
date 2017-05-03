@@ -37,7 +37,7 @@ namespace WebApp.Controllers
 
         public ActionResult Sriti()
         {
-            return View("About");
+            return View();
         }
 
         public ActionResult GetNew()
