@@ -8,6 +8,7 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
+        private WebApp.Models.WebAppModel db = new Models.WebAppModel();
         public ActionResult Index()
         {
             return View();
@@ -49,6 +50,12 @@ namespace WebApp.Controllers
         public ActionResult GetNew(Models.NewModel model)
         {
             return View();
+        }
+
+        public ActionResult NameClass()
+        {
+            var res = db.NameClass.ToList();
+            return View(res);
         }
     }
 }

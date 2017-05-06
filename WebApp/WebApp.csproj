@@ -173,14 +173,29 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705050335258_InitialCreate.cs" />
+    <Compile Include="Migrations\201705050335258_InitialCreate.Designer.cs">
+      <DependentUpon>201705050335258_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060619519_teachersadded.cs" />
+    <Compile Include="Migrations\201705060619519_teachersadded.Designer.cs">
+      <DependentUpon>201705060619519_teachersadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705060621404_emailadded.cs" />
+    <Compile Include="Migrations\201705060621404_emailadded.Designer.cs">
+      <DependentUpon>201705060621404_emailadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewModel.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Teachers.cs" />
     <Compile Include="Models\WebAppModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -438,14 +453,16 @@
     <Content Include="Views\Home\GetNew.cshtml" />
     <Content Include="Views\Shared\_LayoutMaterial.cshtml" />
     <Content Include="Views\Home\Sriti.cshtml" />
-    <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Delete.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Home\NameClass.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Teachers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -454,6 +471,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705050335258_InitialCreate.resx">
+      <DependentUpon>201705050335258_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060619519_teachersadded.resx">
+      <DependentUpon>201705060619519_teachersadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705060621404_emailadded.resx">
+      <DependentUpon>201705060621404_emailadded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
