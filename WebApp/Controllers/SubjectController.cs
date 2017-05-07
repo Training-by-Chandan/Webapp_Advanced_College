@@ -7,31 +7,28 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
-    public class TeachersController : Controller
+    public class SubjectController : Controller
     {
         private WebApp.Models.WebAppModel db = new Models.WebAppModel();
-        // GET: Teachers
+        // GET: Subject
         public ActionResult Index()
         {
-            var res = db.Teacchers.ToList();
-            return View(res);
+            return View(db.Subject.ToList());
         }
-
         public ActionResult Create()
         {
+            ViewData["TeachersList"] = db.Teacchers.Select(p => new SelectListItem() { Text = p.TeachersName, Value = p.id.ToString() }).AsEnumerable();
             return View();
         }
-
         [HttpPost]
-        public ActionResult Create(Teachers model)
+        public ActionResult Create(Subject  model)
         {
             if (ModelState.IsValid)
             {
-                db.Teacchers.Add(model);
+                db.Subject.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(model);
         }
     }

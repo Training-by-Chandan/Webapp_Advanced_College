@@ -23,6 +23,7 @@ namespace WebApp.Models
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<NameClass> NameClass { get; set; }
         public virtual DbSet<Teachers> Teacchers { get; set; }
+        public virtual DbSet<Subject> Subject { get; set; }
     }
 
     //public class MyEntity

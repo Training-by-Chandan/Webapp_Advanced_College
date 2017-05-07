@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebApp.Models.Teachers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMaterial.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TeachersName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeachersPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeachersAddress)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeachersName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeachersPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeachersAddress)
+        </td>
+        <td>
+            @{
+                var subjectlist = item.Subjects.Select(p => p.SubjectName).ToArray();
+                string subject = String.Join(" , ", subjectlist);
+                <div>@subject</div>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
