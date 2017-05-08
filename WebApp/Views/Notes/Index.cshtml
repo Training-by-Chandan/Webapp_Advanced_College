@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApp.Models.Note>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.ActionLink("Create new Note", "CreateNote", "Notes")
+</div>
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center">@Html.DisplayNameFor(model => model.NoteID)</th>
+                <th>@Html.DisplayNameFor(model => model.Text)</th>
+                <th class="text-right">@Html.DisplayNameFor(model => model.EntityType)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">@Html.DisplayFor(p => item.NoteID)</td>
+                    <td>@Html.DisplayFor(p => item.Text)</td>
+
+                    <td class="text-right">@Html.DisplayFor(p => item.EntityType)</td>
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                        <i class="fa fa-user"></i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </td>
+            </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

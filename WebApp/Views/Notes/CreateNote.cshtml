@@ -1,0 +1,20 @@
+﻿@model WebApp.Models.Note
+@{
+    ViewBag.Title = "CreateNote";
+    Layout = "~/Views/Shared/_LayoutMaterial.cshtml";
+}
+
+@using (Html.BeginForm("NoteCreate","Notes",FormMethod.Post,new {  }))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(p=>p.EntityID)
+        @Html.EditorFor(p=>p.EntityID)
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+}
+
