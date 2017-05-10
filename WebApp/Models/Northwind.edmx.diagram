@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a56db43704024886beb06ef746b85aa1" Name="Diagram1" ZoomLevel="114">
-        <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="0.875" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.CategoryLang" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.CustomerCustomerDemo" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.CustomerDemographic" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
@@ -23,6 +23,9 @@
         <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="3" PointY="14.875" />
         <AssociationConnector Association="NorthwindModel.FK_Orders_Customers" />
         <AssociationConnector Association="NorthwindModel.FK_Order_Details_Orders" />
+        <EntityTypeShape EntityType="NorthwindModel.Product" Width="1.5" PointX="5" PointY="20" />
+        <AssociationConnector Association="NorthwindModel.FK_Products_Categories" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

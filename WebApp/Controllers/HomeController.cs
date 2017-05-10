@@ -9,6 +9,7 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         private WebApp.Models.WebAppModel db = new Models.WebAppModel();
+        private Models.NorthwindEntities db1 = new Models.NorthwindEntities();
         public ActionResult Index()
         {
             return View();
@@ -56,6 +57,12 @@ namespace WebApp.Controllers
         {
             var res = db.NameClass.ToList();
             return View(res);
+        }
+
+
+        public ActionResult ProductList()
+        {
+            return PartialView(db1.Products.ToList());
         }
     }
 }
