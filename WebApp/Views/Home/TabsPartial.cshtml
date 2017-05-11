@@ -1,0 +1,57 @@
+﻿@model WebApp.Models.Product
+
+@{ 
+    string profile = "profile" + Model.ProductID;
+    string hashprofile = "#profile" + Model.ProductID;
+    string message = "message" + Model.ProductID;
+    string hashmessage = "#message" + Model.ProductID;
+    string setting = "setting" + Model.ProductID;
+    string hashsetting = "#setting" + Model.ProductID;
+
+}
+
+
+<!-- Tabs with icons on Card -->
+<div class="card card-nav-tabs">
+    <div class="header header-success">
+        <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active">
+                        <a href="@hashprofile" data-toggle="tab">
+                            <i class="material-icons">face</i>
+                            Product
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@hashmessage" data-toggle="tab">
+                            <i class="material-icons">chat</i>
+                            Unit in Stock
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@hashsetting" data-toggle="tab">
+                            <i class="material-icons">build</i>
+                            Unit Price
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="tab-content text-center">
+            <div class="tab-pane active" id="@profile">
+                <p>@Model.ProductName</p>
+            </div>
+            <div class="tab-pane" id="@message">
+                <p>@Model.UnitsInStock</p>
+            </div>
+            <div class="tab-pane" id="@setting">
+                <p>@Model.UnitPrice</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Tabs with icons on Card -->

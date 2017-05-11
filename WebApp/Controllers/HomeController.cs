@@ -64,5 +64,10 @@ namespace WebApp.Controllers
         {
             return PartialView(db1.Products.ToList());
         }
+
+        public ActionResult TabsPartial(Models.Product model)
+        {
+            return PartialView(model);
+        }
     }
 }

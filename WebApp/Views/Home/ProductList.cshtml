@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<WebApp.Models.Product>
-@using GridMvc.Html
+@*@using GridMvc.Html*@
 
 @{
     ViewBag.Title = "ProductList";
@@ -8,9 +8,23 @@
 
 
 
-@Html.Grid(Model).Columns(col=> {
+@*@Html.Grid(Model).Columns(col=> {
     col.Add(c => c.ProductID);
     col.Add(c => c.ProductName);
     col.Add(c => c.UnitsInStock);
     col.Add(c => c.UnitPrice);
-}).SetRowCssClasses(item => item.UnitsInStock<10 ? "warning" : string.Empty).WithPaging(10).Sortable(true).Filterable(true).WithMultipleFilters()
+}).SetRowCssClasses(item => item.UnitsInStock<10 ? "warning" : string.Empty).WithPaging(10).Sortable(true).Filterable(true).WithMultipleFilters()*@
+
+
+
+
+@*@foreach (var item in Model)
+{
+    @Html.Action("TabsPartial", "Home", new { model =item})
+
+}*@
+
+@foreach (var item in Model)
+{
+    @Html.Partial("TabsPartial",item)
+}
