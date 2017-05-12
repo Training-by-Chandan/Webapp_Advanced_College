@@ -67,6 +67,17 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
+                    <li>
+                        @{
+                            bool isLoggedin = Convert.ToBoolean(Session["LoggedIn"]);
+                            if (isLoggedin)
+                            {
+                                <div>
+                                    Welcome! @Session["UserName"] 
+                                </div>
+                            }
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

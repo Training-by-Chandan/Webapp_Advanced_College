@@ -12,7 +12,16 @@ namespace WebApp.Controllers
         private Models.NorthwindEntities db1 = new Models.NorthwindEntities();
         public ActionResult Index()
         {
-            return View();
+            bool isloggedin = Convert.ToBoolean(Session["LoggedIn"]);
+            if (isloggedin)
+            {
+                return RedirectToAction("Prerana");
+            }
+            else
+            {
+                return View();
+
+            }
         }
 
         public ActionResult About()
@@ -28,7 +37,7 @@ namespace WebApp.Controllers
 
             return View();
         }
-        public ActionResult Prerana(string abc)
+        public ActionResult Prerana(string abc="")
         {
             ViewBag.Title = "Prerana";
             ViewBag.Message = "This is test message from prerana.";
